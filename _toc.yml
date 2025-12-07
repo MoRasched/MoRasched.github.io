@@ -5,13 +5,18 @@ format: jb-book
 root: intro
 
 parts:
-  - caption: My First Section
-    numbered: true
-    chapters:
-      - file: section1/topic1
-      - file: section1/topic2
-
-  - caption: Another Section
-    numbered: false
-    chapters:
-      - file: section2/overview
+    - caption: ODEs
+      numbered: True
+      chapters:  
+    - file: ODEs/theory
+    - file: ODEs/firstmethods
+    - file: ODEs/implementation
+      sections:
+      - file: ODEs/functionalgebra.md
+      - file: ODEs/implementation_ee.md
+      - file: ODEs/implementation_newton.md
+      - file: ODEs/implementation_ie.md
+      - file: ODEs/implementation_ad.md
+    - file: ODEs/RungeKutta
+    - file: ODEs/mechanical
+      

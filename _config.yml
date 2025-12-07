@@ -10,6 +10,12 @@ execute:
   execute_notebooks: "auto"
   timeout: 300
 
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+
 repository:
   url: https://github.com/MoRasched/MoRasched.github.io
 
