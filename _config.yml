@@ -1,33 +1,33 @@
-# Book settings
-# Learn more at https://jupyterbook.org/customize/config.html
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
 
-title: My Course / Book Title
-author: Moritz Rasched
-logo: ASC_Logo_transparent_300ppi_RGB.png        # optional, add your own logo file
-copyright: "2025"
+format: jb-book
 
-execute:
-  execute_notebooks: "auto"
-  timeout: 300
+# This is the main landing page, must exist as intro.md
+root: intro
 
-# Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: book.tex
-
-
-repository:
-  url: https://github.com/MoRasched/MoRasched.github.io
-
-html:
-  use_issues_button: false
-  use_repository_button: true
-
-parse:
-  myst_enable_extensions:
-    - html_image
-    - dollarmath
-    - amsmath
-    - linkify
-    - colon_fence
-  myst_dmath_double_inline: true
+parts:
+  - caption: Team 10  ODE Project
+    numbered: true
+    chapters:
+      - file: intro                # intro.md
+        title: Overview
+      # - file: installation         # installation.md
+      #   title: Installation and Setup
+      # - file: usage                # usage.md
+      #   title: Usage
+      # - file: methods              # methods.md
+      #   title: Numerical Methods
+      # - file: implementation       # implementation.md
+      #   title: Implementation Details
+      #   sections:
+      #     - file: implementation_euler      # implementation_euler.md
+      #       title: Explicit Euler
+      #     - file: implementation_rk         # implementation_rk.md
+      #       title: Runge Kutta Methods
+      #     - file: implementation_adaptive   # implementation_adaptive.md
+      #       title: Adaptive Step Size
+      # - file: examples/simple_ode   # examples/simple_ode.md
+      #   title: Example: Simple ODE
+      # - file: examples/stiff_ode    # examples/stiff_ode.md
+      #   title: Example: Stiff ODE

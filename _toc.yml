@@ -2,21 +2,32 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
+
+# This is the main landing page, must exist as intro.md
 root: intro
 
 parts:
-    - caption: ODEs
-      numbered: True
-      chapters:  
-    - file: ODEs/theory
-    - file: ODEs/firstmethods
-    - file: ODEs/implementation
-      sections:
-      - file: ODEs/functionalgebra.md
-      - file: ODEs/implementation_ee.md
-      - file: ODEs/implementation_newton.md
-      - file: ODEs/implementation_ie.md
-      - file: ODEs/implementation_ad.md
-    - file: ODEs/RungeKutta
-    - file: ODEs/mechanical
-      
+  - caption: Team 10   ODE Project
+    numbered: true
+    chapters:
+      - file: intro                # intro.md
+        title: Overview
+      # - file: installation         # installation.md
+      #   title: Installation and Setup
+      # - file: usage                # usage.md
+      #   title: Usage
+      # - file: methods              # methods.md
+      #   title: Numerical Methods
+      # - file: implementation       # implementation.md
+      #   title: Implementation Details
+      #   sections:
+      #     - file: implementation_euler      # implementation_euler.md
+      #       title: Explicit Euler
+      #     - file: implementation_rk         # implementation_rk.md
+      #       title: Runge Kutta Methods
+      #     - file: implementation_adaptive   # implementation_adaptive.md
+      #       title: Adaptive Step Size
+      # - file: examples/simple_ode   # examples/simple_ode.md
+      #   title: Example: Simple ODE
+      # - file: examples/stiff_ode    # examples/stiff_ode.md
+      #   title: Example: Stiff ODE
