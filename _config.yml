@@ -1,33 +1,101 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
+################################################################################
+# Jupyter Book configuration for MoRasched.github.io
+# Inspired by JSchoeberl/IntroSC, adapted for ASC-ODE material
+################################################################################
 
-format: jb-book
+# --------------------------------------------------------------------
+# Book metadata
+# --------------------------------------------------------------------
+title: "ASC-ODE  Introduction to Scientific Computing"
 
-# This is the main landing page, must exist as intro.md
-root: intro
+# If you want multiple authors, use a list:
+authors:
+  - name: "Moritz Rasched"
+    affiliation: "ASC-ODE Team 10"
+  - name: "Stefan Moser"
+    affiliation: "ASC-ODE Team 10"
+  - name: "Jan Pup Csongor"
+    affiliation: "ASC-ODE Team 10"
 
-parts:
-  - caption: Team 10  ODE Project
-    numbered: true
-    chapters:
-      - file: intro                # intro.md
-        title: Overview
-      # - file: installation         # installation.md
-      #   title: Installation and Setup
-      # - file: usage                # usage.md
-      #   title: Usage
-      # - file: methods              # methods.md
-      #   title: Numerical Methods
-      # - file: implementation       # implementation.md
-      #   title: Implementation Details
-      #   sections:
-      #     - file: implementation_euler      # implementation_euler.md
-      #       title: Explicit Euler
-      #     - file: implementation_rk         # implementation_rk.md
-      #       title: Runge Kutta Methods
-      #     - file: implementation_adaptive   # implementation_adaptive.md
-      #       title: Adaptive Step Size
-      # - file: examples/simple_ode   # examples/simple_ode.md
-      #   title: Example: Simple ODE
-      # - file: examples/stiff_ode    # examples/stiff_ode.md
-      #   title: Example: Stiff ODE
+copyright: "2025"
+logo: ""   # put your logo file in the root folder        
+
+# The language of the book (for HTML lang attribute)
+language: en
+
+# --------------------------------------------------------------------
+# Execution configuration
+# --------------------------------------------------------------------
+execute:
+  # Options: "auto", "force", "cache", "off"
+  execute_notebooks: "off"   # TODO: change to "auto" if you want notebooks re-run on build
+  timeout: 60
+  allow_errors: false
+  # If you later want to cache notebook execution:
+  # cache: "_build/.jupyter_cache"
+
+# --------------------------------------------------------------------
+# HTML options and theme behavior
+# --------------------------------------------------------------------
+html:
+  favicon: "ASC_Logo_transparent_300ppi_RGB.png"   # optional, use same file as logo or remove
+  use_edit_page_button: true
+  use_repository_button: true
+  use_issues_button: true
+  # clean navbar/footer; you can customize later if you like
+  extra_navbar: ""
+  extra_footer: "Documentation for the ASC-ODE project (Team 10, TU Wien)"
+
+  # You can tweak theme options here if desired
+  # theme:
+  #   name: "sphinx_book_theme"
+  #   options:
+  #     navigation_with_keys: true
+
+# --------------------------------------------------------------------
+# Repository information (for 'Edit this page', etc.)
+# --------------------------------------------------------------------
+repository:
+  url: "https://github.com/MoRasched/MoRasched.github.io"
+  path_to_book: ""       # book lives at repo root
+  branch: "main"
+
+# --------------------------------------------------------------------
+# Launch buttons (optional: Binder / JupyterHub, etc.)
+# --------------------------------------------------------------------
+# launch_buttons:
+#   binderhub_url: ""      # e.g.: "https://mybinder.org"
+#   notebook_interface: "jupyterlab"
+#   colab_url: ""          # e.g.: "https://colab.research.google.com"
+
+# --------------------------------------------------------------------
+# References / bibliography (optional)
+# --------------------------------------------------------------------
+#bibtex_bibfiles: []   # Add a references.bib file in the repo if you want citations
+
+# --------------------------------------------------------------------
+# Sphinx configuration extensions (you can expand later)
+# --------------------------------------------------------------------
+sphinx:
+  config:
+    # Numbered sections, like in a textbook
+    numfig: true
+    html_show_copyright: false
+    html_show_sourcelink: false
+    # Enable MyST features similar to IntroSC
+    myst_enable_extensions:
+      - colon_fence
+      - deflist
+      - dollarmath
+      - html_image
+      - linkify
+      - substitution
+
+################################################################################
+# Notes:
+# - Content will be controlled by _toc.yml and Markdown/Notebook files.
+# - Repos with code:
+#     * ASC-ODE C++ package: https://github.com/Stefmeff/ASC-ODE-team-10
+#     * Numerical Computing notebooks: https://github.com/MoRasched/NC
+#   You can link to them from your Markdown pages.
+################################################################################

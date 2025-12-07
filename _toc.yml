@@ -1,33 +1,105 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
+# ============================================================================
+# Table of contents for ASC-ODE (Team 10) Jupyter Book
+# Structured to mirror the README.md and the upstream IntroSC/ODEs jupyterbook
+# ============================================================================
 
 format: jb-book
-
-# This is the main landing page, must exist as intro.md
-root: intro
+root: intro   # intro.md at repo root
 
 parts:
-  - caption: Team 10   ODE Project
-    numbered: true
+
+  # --------------------------------------------------------------------------
+  # 1. Project overview and context
+  # --------------------------------------------------------------------------
+  - caption: Project Overview
     chapters:
-      - file: intro                # intro.md
-        title: Overview
-      # - file: installation         # installation.md
-      #   title: Installation and Setup
-      # - file: usage                # usage.md
-      #   title: Usage
-      # - file: methods              # methods.md
-      #   title: Numerical Methods
-      # - file: implementation       # implementation.md
-      #   title: Implementation Details
-      #   sections:
-      #     - file: implementation_euler      # implementation_euler.md
-      #       title: Explicit Euler
-      #     - file: implementation_rk         # implementation_rk.md
-      #       title: Runge Kutta Methods
-      #     - file: implementation_adaptive   # implementation_adaptive.md
-      #       title: Adaptive Step Size
-      # - file: examples/simple_ode   # examples/simple_ode.md
-      #   title: Example: Simple ODE
-      # - file: examples/stiff_ode    # examples/stiff_ode.md
-      #   title: Example: Stiff ODE
+      - file: project/overview
+      - file: project/team
+      - file: project/scope_and_tasks
+
+  # --------------------------------------------------------------------------
+  # 2. ODE theory and jupyterbook context (links to upstream material)
+  # --------------------------------------------------------------------------
+  - caption: ODE Theory & Course Context
+    chapters:
+      - file: theory/ode_basics
+      - file: theory/course_context
+      - file: theory/jupyterbook_mapping
+
+  # --------------------------------------------------------------------------
+  # 3. Mechanical systems (TODO: to be implemented in detail)
+  # --------------------------------------------------------------------------
+  - caption: Mechanical Systems   # TODO: fill with detailed mechanical modeling
+    chapters:
+      - file: mech/intro               # TODO: create mech/intro.md
+      - file: mech/mass_spring_model   # TODO: mechanical modeling of mass–spring system
+      - file: mech/rc_circuit_model    # TODO: ODE modeling of RC / electric network
+      - file: mech/pendulum_model      # TODO: pendulum model (for AD + mechanics)
+      - file: mech/energy_and_stability  # TODO: energy/stability discussion
+
+  # --------------------------------------------------------------------------
+  # 4. Numerical methods implemented by Team 10
+  #    (organized as in the README: Euler, implicit, AD, RK)
+  # --------------------------------------------------------------------------
+  - caption: Numerical Methods Implemented
+    chapters:
+
+      # 4.1 Explicit & Improved Euler (Mass–Spring)
+      - file: methods/explicit_improved_euler
+
+      # 4.2 Implicit Euler & Crank–Nicolson (Mass–Spring)
+      - file: methods/implicit_euler_crank_nicolson
+
+      # 4.3 Electric Network / RC Circuit
+      - file: methods/electric_network
+
+      # 4.4 Automatic Differentiation (Legendre & Pendulum)
+      - file: methods/automatic_differentiation
+
+      # 4.5 Runge–Kutta Methods (Explicit & Implicit)
+      - file: methods/runge_kutta
+
+  # --------------------------------------------------------------------------
+  # 5. Implementation details: mapping code <-> methods
+  # --------------------------------------------------------------------------
+  - caption: Implementation in ASC-ODE-team-10
+    chapters:
+      - file: impl/overview
+      - file: impl/repository_structure
+      - file: impl/cpp_core
+      - file: impl/timestepper_and_newton
+      - file: impl/autodiff_module
+      - file: impl/plots_and_outputs
+
+  # --------------------------------------------------------------------------
+  # 6. Using the project: build, run, reproduce the README sections
+  # --------------------------------------------------------------------------
+  - caption: Building & Running the Project
+    chapters:
+      - file: usage/requirements
+      - file: usage/build_with_cmake
+      - file: usage/running_mass_spring
+      - file: usage/running_electric_network
+      - file: usage/running_autodiff
+      - file: usage/plotting_workflow
+      - file: usage/interpreting_results
+
+  # --------------------------------------------------------------------------
+  # 7. Results: mass–spring, electric network, AD plots & discussion
+  # (this section can embed the same plots you referenced in README)
+  # --------------------------------------------------------------------------
+  - caption: Numerical Results & Discussion
+    chapters:
+      - file: results/mass_spring
+      - file: results/electric_network
+      - file: results/legendre_ad
+      - file: results/summary
+
+  # --------------------------------------------------------------------------
+  # 8. Appendices: references, tools, changelog, etc.
+  # --------------------------------------------------------------------------
+  - caption: Appendices
+    chapters:
+      - file: appendix/references
+      - file: appendix/tools
+      - file: appendix/changelog
