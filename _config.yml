@@ -1,0 +1,95 @@
+################################################################################
+# Jupyter Book configuration for MoRasched.github.io
+# Inspired by JSchoeberl/IntroSC, adapted for ASC-ODE material
+################################################################################
+
+# --------------------------------------------------------------------
+# Book metadata
+# --------------------------------------------------------------------
+title: "ASC-ODE  Introduction to Scientific Computing"
+
+# If you want multiple authors, use a list:
+authors:
+  - name: "Moritz Rasched"
+    affiliation: "ASC-ODE Team 10"
+  - name: "Stefan Moser"
+    affiliation: "ASC-ODE Team 10"
+  - name: "Jan Pup Csongor"
+    affiliation: "ASC-ODE Team 10"
+
+copyright: "2025"
+logo: "ASC_Logo_transparent_300ppi_RGB.png"   # put your logo file in the root folder        
+
+# The language of the book (for HTML lang attribute)
+language: en
+
+# --------------------------------------------------------------------
+# Execution configuration
+# --------------------------------------------------------------------
+execute:
+  # Options: "auto", "force", "cache", "off"
+  execute_notebooks: "off"   # TODO: change to "auto" if you want notebooks re-run on build
+  timeout: 60
+  allow_errors: false
+  # If you later want to cache notebook execution:
+  # cache: "_build/.jupyter_cache"
+
+# --------------------------------------------------------------------
+# HTML options and theme behavior
+# --------------------------------------------------------------------
+html:
+  favicon: "ASC_Logo_transparent_300ppi_RGB.png"
+  use_edit_page_button: true
+  use_repository_button: true
+  use_issues_button: true
+
+  # Optional: clean navbar/footer
+  extra_navbar: ""
+
+  # This is where we override the default Jupyter Book community text
+  extra_footer: |
+    ASC-ODE  Team 10, TU Wien  
+    Documentation for the project
+    <a href="https://github.com/Stefmeff/ASC-ODE-team-10">Stefmeff/ASC-ODE-team-10</a>.
+# --------------------------------------------------------------------
+# Repository information (for 'Edit this page', etc.)
+# --------------------------------------------------------------------
+repository:
+  url: "https://github.com/MoRasched/MoRasched.github.io"
+  path_to_book: ""       # book lives at repo root
+  branch: "main"
+
+# --------------------------------------------------------------------
+# Launch buttons (optional: Binder / JupyterHub, etc.)
+# --------------------------------------------------------------------
+# launch_buttons:
+#   binderhub_url: ""      # e.g.: "https://mybinder.org"
+#   notebook_interface: "jupyterlab"
+#   colab_url: ""          # e.g.: "https://colab.research.google.com"
+
+
+# --------------------------------------------------------------------
+# Sphinx configuration extensions (you can expand later)
+# --------------------------------------------------------------------
+sphinx:
+  config:
+    # Numbered sections, like in a textbook
+    numfig: true
+    html_show_copyright: false
+    html_show_sourcelink: false
+    # Enable MyST features similar to IntroSC
+    myst_enable_extensions:
+      - colon_fence
+      - deflist
+      - dollarmath
+      - html_image
+      - linkify
+      - substitution
+
+################################################################################
+# Notes:
+# - Content will be controlled by _toc.yml and Markdown/Notebook files.
+# - Repos with code:
+#     * ASC-ODE C++ package: https://github.com/Stefmeff/ASC-ODE-team-10
+#     * Numerical Computing notebooks: https://github.com/MoRasched/NC-ASC-ODE
+################################################################################

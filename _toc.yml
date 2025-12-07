@@ -1,0 +1,26 @@
+format: jb-book
+root: intro   # intro.md at repo root
+
+parts:
+  - caption: ODEs
+    chapters:
+      - file: odes/solving_odes
+        title: "Solving ordinary differential equations"
+
+      - file: odes/little_theory
+        title: "A little bit of theory"
+
+      - file: odes/simple_timestepping
+        title: "Some simple time-stepping methods"
+
+      - file: odes/implementation
+        title: "Implementation"
+
+      - file: odes/automatic_differentiation
+        title: "Automatic Differentiation"
+
+      - file: odes/runge_kutta
+        title: "Runge_Kutta methods"
+
+      - file: odes/mechanical_systems
+        title: "Mechanical Systems"
