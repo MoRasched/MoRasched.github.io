@@ -17,8 +17,8 @@ parts:
       - file: odes/building
         title: "Building the Project"
 
-      - file: odes/results
+      - file: odes/results_and_plots
         title: "Numerical Results and Discussion"
 
-      - file: odes/license
-        title: "License"
+      - file: odes/Applications
+        title: "Applications of ODE Solvers"

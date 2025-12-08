@@ -125,7 +125,7 @@ void doStep(double tau, VectorView<double> y) override
 }
 ```
 
-## 2.5 Explicit Runge-Kutta
+## 2.5 Explicit Runge-Kutta for Arbitrary Butcher Tableaus
 
 Explicit Runge–Kutta generalizes single-step methods using a Butcher tableau with stages $s$, coefficients $a_{ij}$, $b_j$, and nodes $c_j$. Each stage computes a slope $k_j$ using weighted combinations of prior stages:
 
@@ -157,40 +157,6 @@ void doStep(double tau, VectorView<double> y) override
   }
 
   // Combine stages: y_{n+1} = y_n + tau * sum(b_j * k_j)
-  for (int j = 0; j < m_stages; j++)
-    y += tau * m_b(j) * m_k.range(j*m_n, (j+1)*m_n);
-}
-```
-
-## 2.6 Implicit Runge-Kutta
-
-Implicit Runge–Kutta solves all stages simultaneously via Newton's method, gaining unconditional stability and higher accuracy. All stages depend on all prior ones, so the full system of stage equations must be solved as a vector problem. The residual couples all stages together through the tableau:
-
-$$\mathbf{k} = \mathbf{f}(y_n + \tau A\mathbf{k}), \quad y_{n+1} = y_n + \tau \mathbf{b}^T\mathbf{k}$$
-
-The `ImplicitRungeKutta` class assembles a composed function `m_equ` that encapsulates the stage equations and hands it to Newton:
-
-```cpp
-ImplicitRungeKutta(std::shared_ptr<NonlinearFunction> rhs,
-  const Matrix<> &a, const Vector<> &b, const Vector<> &c) 
-: TimeStepper(rhs), m_a(a), m_b(b), m_c(c),
-m_tau(std::make_shared<Parameter>(0.0)),
-m_stages(c.size()), m_n(rhs->dimX()), m_k(m_stages*m_n), m_y(m_stages*m_n)
-{
-  auto multiple_rhs = make_shared<MultipleFunc>(rhs, m_stages);
-  m_yold = std::make_shared<ConstantFunction>(m_stages*m_n);
-  auto knew = std::make_shared<IdentityFunction>(m_stages*m_n);
-  m_equ = knew - Compose(multiple_rhs, m_yold+m_tau*std::make_shared<MatVecFunc>(a, m_n));
-}
-
-void doStep(double tau, VectorView<double> y) override
-{
-  for (int j = 0; j < m_stages; j++)
-    m_y.range(j*m_n, (j+1)*m_n) = y;
-  m_yold->set(m_y);
-  m_tau->set(tau);
-  m_k = 0.0;  
-  NewtonSolver(m_equ, m_k);  // solve for all stage slopes
   for (int j = 0; j < m_stages; j++)
     y += tau * m_b(j) * m_k.range(j*m_n, (j+1)*m_n);
 }
