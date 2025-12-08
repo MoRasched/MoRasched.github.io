@@ -14,11 +14,11 @@ parts:
       - file: odes/TimeSteppingMethods
         title: "Time Stepping Methods Implementation"
 
+      - file: odes/Applications
+        title: "Numerical Results, plots and Discussion"
+
       - file: odes/building
         title: "Building the Project"
 
-      - file: odes/results_and_plots
-        title: "Numerical Results and Discussion"
-
-      - file: odes/Applications
-        title: "Applications of ODE Solvers"
+      # - file: odes/results_and_plots
+      #   title: "Numerical Results and Discussion"
