@@ -4,17 +4,15 @@ root: intro   # intro.md is your landing page
 parts:
   - caption: ASC-ODE  Team 10
     chapters:
-      - file: odes/overview
-        title: "Project Overview"
-
-      - file: odes/team
-        title: "Team"
 
       - file: odes/scope_and_tasks
         title: "Project Scope and Tasks"
 
-      - file: odes/repository_structure
-        title: "Repository Structure"
+      - file: odes/FunctionAlgebra
+        title: "Function Algebra Implementation"
+
+      - file: odes/TimeSteppingMethods
+        title: "Time Stepping Methods Implementation"
 
       - file: odes/building
         title: "Building the Project"
