@@ -7,7 +7,7 @@ for solving ordinary differential equations (ODEs) in the context of the
 
 ## Team 10
 
-- **Moritz Rasched** – `<e01644619@student.tuwien.ac.at>`
-- **Stefan Moser** – `<e12025955@tuwien.ac.at>`
-- **Jan Pup Csongor** – `<email2@tuwien.ac.at>` <!-- TODO: replace with real address -->
+- **Moritz Rasched** – `<@student.tuwien.ac.at>`
+- **Stefan Moser** – `<@tuwien.ac.at>`
+- **Jan Pup Csongor** – `<@tuwien.ac.at>` <!-- TODO: replace with real address -->
 

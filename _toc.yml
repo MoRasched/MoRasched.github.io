@@ -19,9 +19,6 @@ parts:
       - file: odes/building
         title: "Building the Project"
 
-      - file: odes/running_demos
-        title: "Running the Demos"
-
       - file: odes/results
         title: "Numerical Results and Discussion"
 
