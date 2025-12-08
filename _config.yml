@@ -18,7 +18,7 @@ authors:
     affiliation: "ASC-ODE Team 10"
 
 copyright: "2025"
-logo: ""   # put your logo file in the root folder        
+logo: ASC_Logo_transparent_300ppi_RGB.png   # put your logo file in the root folder        
 
 # The language of the book (for HTML lang attribute)
 language: en
@@ -38,7 +38,7 @@ execute:
 # HTML options and theme behavior
 # --------------------------------------------------------------------
 html:
-  favicon: "ASC_Logo_transparent_300ppi_RGB.png"   # optional, use same file as logo or remove
+  favicon: ASC_Logo_transparent_300ppi_RGB.png   # optional, use same file as logo or remove
   use_edit_page_button: true
   use_repository_button: true
   use_issues_button: true
